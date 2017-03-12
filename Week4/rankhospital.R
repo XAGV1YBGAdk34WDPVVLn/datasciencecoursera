@@ -47,7 +47,7 @@ rankhospital <- function(state, outcome, num = "best") {
     working <- working[order(working[,3], working[,1], na.last=NA),]
 
     # print(head(working,20))
-    print(tail(working,2))
+    # print(tail(working,2))
 
     #
     if(num == "best"){
