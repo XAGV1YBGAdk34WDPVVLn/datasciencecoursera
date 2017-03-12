@@ -21,7 +21,7 @@ best <- function(state, outcome){
     } else if(outcome == "heart failure"){
         working <- data[,c(2,7,17)]
     } else if(outcome == "pneumonia"){
-        working <- data[,c(2,7,41)]
+        working <- data[,c(2,7,23)]
     } else {
         stop("invalid outcome")
     }
@@ -37,9 +37,9 @@ best <- function(state, outcome){
     # print(working)
 
     # sort alphabetically. if there is a tie, the first hospital, sorted alphabetically is returned
-    working <- working[order(working[,1]),]
+    working <- working[order(working[,3], working[,1], na.last=NA),]
 
-    # print(working)
+    # print(head(working,20))
 
     # min to get best rates
     working <- working[which.min(working[,3]),]
